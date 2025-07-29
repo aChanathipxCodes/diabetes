@@ -1,38 +1,96 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(270deg, #c0b4d5, #cae4f8, #ade3f8);
+  background-size: 600% 600%;
+  animation: backgroundMove 20s linear infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* พื้นหลังเคลื่อน */
+@keyframes backgroundMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* วงกลมพื้นหลัง */
+.circle {
+  position: relative;
+  width: 165vmin;
+  height: 160vmin;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, #c0b4d5, #ade3f8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 165vmin;
+}
+
+.content {
+  text-align: center;
+  max-width: 80%;
+  z-index: 1;
+  margin-top: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.en {
+  font-family: Georgia, serif;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.th {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 400;
+}
+
+.content h2 {
+  font-size: 72px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.content h1 {
+  font-size: 154px;
+  font-weight: lighter;
+  margin: 20px 0 10px;
+}
+
+.subtitle {
+  font-size: 28px;
+  margin: 10px 0;
+}
+
+.description {
+  font-size: 22px;
+  color: #333;
+  margin: 10px 0 20px;
+}
+
+/* ปุ่ม */
+.start-button {
+  text-decoration: underline;
+  color: #3366ff;
+  font-size: 22px;
+  transition: all 0.3s ease;
+  margin-top: 40px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.start-button:hover {
+  text-decoration: underline;
+  color: #0033cc;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
