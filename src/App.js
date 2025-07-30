@@ -1,7 +1,10 @@
+// src/App.js
 import React from 'react';
 import './App.css';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Sign from './Sign';  // นำเข้า Sign.js
 
-function App() {
+function Home() {
   return (
     <div className="App">
       <div className="circle">
@@ -14,10 +17,21 @@ function App() {
           <p className="th description">
             ระบบของเราช่วยประเมินความเสี่ยงของโรคเบาหวานผ่านข้อมูลสุขภาพ พร้อมคำแนะนำเพื่อดูแลตัวเอง
           </p>
-          <a href="sign.html" className="th start-button">Let's start.</a>
+          <Link to="/sign" className="th start-button">Let's start.</Link>
         </div>
       </div>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/sign" element={<Sign />} />
+      </Routes>
+    </Router>
   );
 }
 
